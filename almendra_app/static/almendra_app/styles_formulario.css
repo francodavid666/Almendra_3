@@ -1,0 +1,205 @@
+
+*{
+  font-size: 30px;
+}
+body{
+   
+    font-family: 'Sen', sans-serif;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background: radial-gradient(circle at 50% 49%,#c58d69, #8f674e);
+ 
+
+}
+
+.form{
+  background-color: #865439;
+  margin: auto;
+  margin-top:auto;
+  width:  100%;
+  
+  max-width: 75%;
+  height: 50%;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+/*TITULO LOGIN_FORMULARIO*/
+
+.form .titulo{
+  color: #8FC1D4;
+  font-size: 45px;
+  margin: 0px;
+}
+.form__title{
+  font-size: 3rem;
+  margin-top: 0%;
+  margin-bottom: .5em;
+  color: #8FC1D4;
+  text-decoration: underline;
+}
+
+
+
+.form__container{
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+  gap:2.5em;
+
+}
+
+
+
+.form_group{
+  position: relative;
+  --color:#5757577e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+ 
+}
+
+
+
+
+
+.form__input{
+  width: 100%;
+  color: #18e07c;
+  font-size: 5rem;
+  padding: .6em  .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color);
+
+} 
+
+
+
+.form__input:focus + .form__label{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: red;
+}
+
+
+.form__label{
+  color: #8FC1D4;
+  margin-bottom: 5px;
+  font-size: 60px;
+  margin: 20px;
+ 
+}
+
+
+
+
+input{
+  width: 670px;
+  border: 16px;
+  height: 50px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  background-color: rgba(242, 236, 236, 0.5);
+  border-radius:15px;
+  font-size: 40px;
+
+  
+}
+
+
+textarea{
+  width: 670px;
+ 
+  border: none;
+  border-radius:15px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+
+
+
+
+.form__informacion{
+  height:300px;
+  background-color: rgba(242, 236, 236, 0.5);
+  
+}
+
+.form__descripcion{
+  height:300px;
+  background-color: rgba(242, 236, 236, 0.5);
+  
+}
+
+
+/*.form__descripcion{
+  height:80px;
+  background-color: rgba(242, 236, 236, 0.5);
+  
+}*/
+.input__form{
+  background-color: blue;
+  color: red;
+}
+
+
+/*BOTON*/
+.form__submit{
+  width: 300px;
+  height: 80px;
+  border-radius:  10px  ;
+  font-family: 'Sen', sans-serif;
+  font-size: 50px;
+  color: rgb(227, 227, 227);
+  background-color: #8FC1D4;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  border: none;
+
+}
+.ckeditor :nth-child(2){
+  display: none;
+}
+ 
+.ckeditor :nth-child(3){
+  display: none;
+}
+ 
+.ckeditor :first-child{
+
+}
+
+.ckeditor {
+  color: #865439;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.ckeditor input{
+  margin: 50px;
+  
+
+}
+
+
+/*.form__label{
+  color: var(-color);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s,color .3s;
+  background-color: red;
+}
+*/
