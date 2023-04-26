@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'almendra_proyecto.wsgi.application'
 
 import dj_database_url
 
-
+'''
 DATABASES = {
     'default': dj_database_url.config( 
         default='postgresql://francodavid666:v2_43TAT_w4cYqbM8rnc5PEwS7FvXRZf@db.bit.io:5432/francodavid666/Almendra_BD',
@@ -119,16 +119,20 @@ DATABASES = {
         
          conn_max_age=600 )
 }
-
-#
 '''
+#postgresql://postgres:MaDTvtZ4q0DKnggbCMY8@containers-us-west-120.railway.app:7552/railway
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'PASSWORD': 'MaDTvtZ4q0DKnggbCMY8',
+        'USER':'postgres',
+        'HOST': 'containers-us-west-120.railway.app',
+        'PORT':'7552'
     }
 }
-'''
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
