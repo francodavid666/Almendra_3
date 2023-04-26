@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn almendra_3.wsgi
+web: python manage.py migrate && gunicorn almendra_proyecto.wsgi
