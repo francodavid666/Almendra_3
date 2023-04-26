@@ -7,7 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class pasteleria_model (models.Model):
 
-     imagen = models.ImageField(blank=True, null = True,upload_to='almendra_app/static/almendra_app/media')
+     imagen = models.ImageField(blank=True, null = True,upload_to='pasteleria/')
      titulo = models.CharField(max_length=50, blank = True, null = True)
      descripcion =  models.CharField(max_length=50, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
@@ -16,7 +16,7 @@ class pasteleria_model (models.Model):
 
 
 class salados_model (models.Model):
-     imagen = models.ImageField(blank=True, null = True)#upload_to='salados/')
+     imagen = models.ImageField(blank=True, null = True,upload_to='salados/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
      descripcion =  models.CharField(max_length=50, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
@@ -24,7 +24,7 @@ class salados_model (models.Model):
 
 
 class bebidas_model (models.Model):
-     imagen = models.ImageField(blank=True, null = True)#upload_to='bebidas/')
+     imagen = models.ImageField(blank=True, null = True,upload_to='bebidas/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
      descripcion =  models.CharField(max_length=50, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
@@ -33,7 +33,7 @@ class bebidas_model (models.Model):
    
 
 class cafes_model(models.Model):
-     imagen = models.ImageField(blank=True, null = True)#upload_to='cafes/')
+     imagen = models.ImageField(blank=True, null = True,upload_to='cafes/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
      descripcion =  models.CharField(max_length=184, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
@@ -41,7 +41,7 @@ class cafes_model(models.Model):
 
 
 class brunch_model(models.Model):
-     imagen = models.ImageField(blank=True, null = True)#upload_to='brunchs/')
+     imagen = models.ImageField(blank=True, null = True,upload_to='brunchs/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
      p1=models.CharField(max_length=40, blank = True, null = True)
@@ -55,7 +55,7 @@ class brunch_model(models.Model):
  
 
 class populares_model(models.Model):
-     imagen = models.ImageField(blank=True, null = True)#upload_to='populares/')
+     imagen = models.ImageField(blank=True, null = True, upload_to='populares/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
      
      informacion = models.CharField(max_length=184, blank = True, null = True)
