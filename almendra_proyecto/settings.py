@@ -114,7 +114,8 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config( 
-        default='postgres://bd_almendra_user:whdkjTcv26l2sR1wLvCCOiTojnsY3Y3o@dpg-ch0kgtj3cv2c5b5dsje0-a.oregon-postgres.render.com/bd_almendra',
+        default='postgresql://francodavid666:v2_43TAT_w4cYqbM8rnc5PEwS7FvXRZf@db.bit.io:5432/francodavid666/Almendra_BD',
+       # default='postgres://bd_almendra_user:whdkjTcv26l2sR1wLvCCOiTojnsY3Y3o@dpg-ch0kgtj3cv2c5b5dsje0-a.oregon-postgres.render.com/bd_almendra',
         
          conn_max_age=600 )
 }
