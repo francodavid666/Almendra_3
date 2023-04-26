@@ -7,7 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class pasteleria_model (models.Model):
 
-     imagen = models.ImageField(blank=True, null = True,upload_to='media/')
+     imagen = models.ImageField(blank=True, null = True,upload_to='almendra_app/static/almendra_app/media')
      titulo = models.CharField(max_length=50, blank = True, null = True)
      descripcion =  models.CharField(max_length=50, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)

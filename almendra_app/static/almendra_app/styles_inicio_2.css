@@ -14,7 +14,8 @@ body{
 
 
 header{
-    background-color: #FCDEC0;
+    background-color: #d32020;
+    /*background-color: #FCDEC0;*/
    
     display: grid;
     grid-template-columns: repeat(3,1fr);
