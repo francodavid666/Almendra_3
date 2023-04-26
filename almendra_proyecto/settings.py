@@ -169,14 +169,12 @@ USE_TZ = True
 
 #Carpeta en donde se encuentran los estaticos (imagenes,javascript o css)
 STATIC_URL = '/static/'
-#MEDIA_URL='postgres://base_datos_almendra_user:H3vGVXki83w7q0nNN1iZoRgOhKOPbks3@dpg-cg8libg2qv21l3b6ufrg-a.oregon-postgres.render.com/base_datos_almendra/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#MEDIA_ROOT = os.path.join(BASE_DIR,'postgres://base_datos_almendra_user:H3vGVXki83w7q0nNN1iZoRgOhKOPbks3@dpg-cg8libg2qv21l3b6ufrg-a.oregon-postgres.render.com/')
 
 
 
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = os.path.join(BASE_DIR,'almendra_app/static/almendra_app/media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'/media/')
 
 
 
@@ -188,7 +186,7 @@ STATICFILES_DIRS=(
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 
