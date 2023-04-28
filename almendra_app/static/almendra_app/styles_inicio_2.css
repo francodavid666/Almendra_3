@@ -23,8 +23,8 @@ header{
     grid-template-rows: 250px;
     padding: 5px 0px 10px 0px;
     top: 0px;
-    position: fixed;
-    z-index: 5;
+    /*position: fixed;
+    z-index: 5;*/
     
     
    
@@ -157,15 +157,23 @@ align-items: self-start;
 
 /*MENU HORIZONTAL*/
 .menu_horizontal{
- height: 50px;
+ height: 200px;
  margin-bottom: 250px;
- margin-top: 350px;
+ 
+
+ position: sticky;
+ top: 0;
+ z-index: 6;
+
+ background-color: #865439;
+
  
 }
 .menu_container{
     width: 100%;
-    margin-top: 100px;
    
+    background: #c58d69;
+
     height: 100%;
     display: flex;
     align-items: center;
@@ -174,7 +182,7 @@ align-items: self-start;
 
 .menu_container a{
     margin: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 180px;
     text-decoration: none;
    background-color:  #865439;
@@ -373,7 +381,7 @@ color: white;
 .modal{
     display: none;/*asi esta oculto, por defecto*/
     position: fixed;/*para que la posicion sea fija*/
-    z-index: 1;/*para que se situe por encima de otros elementos*/
+    z-index: 10;/*para que se situe por encima de otros elementos*/
     /*estara situado a 50px de la parte superior*/
     left: 0;
     top: 0;
@@ -819,8 +827,6 @@ margin: 0px;
   grid-column: 1/2;
   grid-row: 1/3;  
  }
-
-
 
 
 

@@ -89,7 +89,7 @@
            
                 {% for po in form_populares %}
 
-                <div class="modal" id='{{ po.titulo }}'>
+               <!-- <div class="modal" id='{{ po.titulo }}'>
                     <div id="modal_contenido" class="modal_contenido">
                         {% if po.imagen %}
                     <img src={{ po.imagen.url }} id="modal_imagen" class="modal_imagen"> 
@@ -98,10 +98,11 @@
                         <p>{{ po.informacion|safe }}</p>
                         <h3>{{ po.precio }}</h3>
                     </div>
-                </div>
-            <<div class="carrousel">
+                </div>-->
+            <div class="carrousel">
     <div class="targeta_populares">
-                <img src="{{ po.imagen.url }}" id = '{{ p.id }}' onclick="abrir_funcion_populares({{ po.id }},'{{ po.titulo }}')">
+                <img src="{{ po.imagen.url }}" id = '{{ p.id }}' >
+                <!--<img src="{{ po.imagen.url }}" id = '{{ p.id }}' onclick="abrir_funcion_populares({{ po.id }},'{{ po.titulo }}')">-->
                 <h4>{{ po.titulo }}</h4> 
                 <p>{{ po.precio }}</p>
                <!-- <a href="">Mas info</a>-->
