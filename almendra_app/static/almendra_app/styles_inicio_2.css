@@ -164,17 +164,16 @@ align-items: self-start;
  position: sticky;
  top: 0;
  z-index: 6;
-
- background-color: #865439;
+ background: #c58d69;
 
  
 }
 .menu_container{
     width: 100%;
-   
-    background: #c58d69;
 
-    height: 100%;
+    background: #c58d69;
+    
+    height: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
