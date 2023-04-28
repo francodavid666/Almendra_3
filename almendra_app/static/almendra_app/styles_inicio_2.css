@@ -166,18 +166,25 @@ align-items: self-start;
  z-index: 6;
  background: #c58d69;
 
- 
 }
 .menu_container{
     width: 100%;
 
+ 
     background: #c58d69;
     
     height: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
+
+.menu_container2{
+    background: rgb(197,141,105);
+    background: linear-gradient(180deg, rgba(197,141,105,1) 0%, rgba(197,141,105,1) 86%, rgba(197,141,105,0.8462556897759104) 100%);
+}
+
 
 .menu_container a{
     margin: 30px;
