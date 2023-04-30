@@ -398,7 +398,7 @@ color: white;
 }
 
 
-.modal .modal_contenido{
+.modal_contenido{
     position: relative;/*relativo con respecto al contenedor modal*/
     background: radial-gradient(circle at 50% 49%,rgba(197,141,105,1), rgb(143, 103, 78));
     margin: auto;
@@ -407,7 +407,7 @@ color: white;
     display: grid;
     grid-template-columns: repeat(1,1fr 30px 1fr 10px);
     grid-template-rows: repeat(1,70px 1fr 1fr 70px);
-    width: 80%;
+    width: 90%;
     height: 25%;
     border-radius: 10px;
 
