@@ -14,11 +14,12 @@
     header{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 50px;
+        height: 50px;
         justify-content: center;
         align-items: center;
     }
     .div_logo{
-
+margin-top: 100px;
         width: 1%;
         height: 100%;
     }
@@ -26,6 +27,29 @@
         height:60px;
         width:60px;
     }
+
+    .div_logo a{
+    
+    width: 150px;
+    height: 150px;
+
+margin: 0px;
+}
+
+.div_pagina{
+    grid-column: 3/4;
+    width: 100%;
+margin: 0px;
+justify-content: center;
+align-items: center;
+}
+
+.div_pagina a{
+  
+    font-size:20px;
+margin: 0px;
+
+}
 
    /* .div_spotify{
         grid-row: 1/1;
