@@ -6,8 +6,11 @@ body{
     text-align: center;
 
     font-family: 'Sen', sans-serif;
-    background-color: #C58D69;
-    background: radial-gradient(circle at 50% 49%,rgba(197,141,105,1), rgb(143, 103, 78))
+   /* background-color: #C58D69;
+    background: radial-gradient(circle at 50% 49%,rgba(197,141,105,1), rgb(143, 103, 78));*/
+    background-image: url('./img/bg.jpg');
+    background-position: center ;
+    background-size:contain;
     
     
 }
@@ -17,15 +20,16 @@ header{
    /*background-color: #d32020;*/
    background-color:#dcb791;
    width: 100%;
-   
+   height: 150px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 250px;
+    grid-template-rows: 150px;
     padding: 5px 0px 10px 0px;
     top: 0px;
     /*position: fixed;
     z-index: 5;*/
-    
+    align-items: center;
+    justify-content: center;
     
    
 }
@@ -43,17 +47,40 @@ header{
 
 .div_logo {
 grid-column: 2/3;
+grid-row:  1/1;
 display: flex;
 justify-content: center;
 align-items: center;
 }
 .logo{
-    position: relative;
-    width: 40%;
-    height: 100%;
+    
+    width: 150px;
+    height: 150px;
+}
+.div_logo a{
+    
+    width: 150px;
+    height: 150px;
+
+margin: 0px;
 }
 
+.div_pagina{
+    grid-row: 1/1;
+    grid-column:3/4;
+    text-align: center;
+}
+.div_pagina a{
+    text-decoration: none;
+    color: white;
 
+    }
+
+  .div_spotify{
+    grid-column: 1/2;
+    grid-row:  1/1;
+
+    }
 
 
 .div_home {
@@ -434,7 +461,7 @@ margin: 10px;
     font-size: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
 }
 .modal h3 {/*PRECIO*/
@@ -1026,6 +1053,7 @@ footer{
     background: #c58d69;
     overflow: hidden;
     z-index: -1;
+    display: none;
 }
 
 .background_img img{
@@ -1301,11 +1329,30 @@ undefined
     left: 4vw;
     top: 11vh;
 }
-}
 
 
-
- 
 
 
 /*MEDIA QUERIES*/
+.div_logo a{
+    
+    width: 150px;
+    height: 150px;
+
+margin: 0px;
+}
+
+.div_pagina{
+    grid-column: 3/4;
+    width: 100%;
+margin: 0px;
+justify-content: center;
+align-items: center;
+}
+
+.div_pagina a{
+  
+    font-size:30px;
+margin: 0px;
+
+}

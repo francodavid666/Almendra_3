@@ -6,7 +6,6 @@ from .models import *
 
 # Create your views here.
 
-
 def inicio (request):
 
     form = pasteleria_model.objects.all()
