@@ -3,6 +3,14 @@
 /* media header*/
 /* media header*/
 @media (min-width:500px) and (max-width: 5000px) and (hover:hover){
+    body{   
+        background-position: center ;
+        background-size:auto;
+
+
+    }
+}
+@media (min-width:500px) and (max-width: 5000px) and (hover:hover){
     header{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 50px;
