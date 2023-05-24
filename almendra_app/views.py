@@ -5,7 +5,11 @@ from django.contrib import messages
 from .models import *
 
 # Create your views here.
+'''
+def almendra_web (request):
 
+ return HttpResponse(request,'almendra-webpage.up.railway.app')
+'''
 def inicio (request):
 
     form = pasteleria_model.objects.all()
