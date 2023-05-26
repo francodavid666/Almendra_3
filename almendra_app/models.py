@@ -9,36 +9,40 @@ class pasteleria_model (models.Model):
 
      imagen = models.ImageField(blank=True, null = True,upload_to='pasteleria/')
      titulo = models.CharField(max_length=50, blank = True, null = True)
-     descripcion =  models.CharField(max_length=50, blank = True, null = True)
+     descripcion =  models.CharField(max_length=70, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
      precio = models.CharField(max_length=50, blank = True, null = True)
 
-
+     def __str__(self)-> str:
+          return self.titulo
 
 class salados_model (models.Model):
      imagen = models.ImageField(blank=True, null = True,upload_to='salados/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
-     descripcion =  models.CharField(max_length=50, blank = True, null = True)
+     descripcion =  models.CharField(max_length=70, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
      precio = models.CharField(max_length=50, blank = True, null = True)
-
+     def __str__(self)-> str:
+          return self.titulo
 
 class bebidas_model (models.Model):
      imagen = models.ImageField(blank=True, null = True,upload_to='bebidas/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
-     descripcion =  models.CharField(max_length=50, blank = True, null = True)
+     descripcion =  models.CharField(max_length=70, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
      precio = models.CharField(max_length=50, blank = True, null = True)
-
+     def __str__(self)-> str:
+          return self.titulo
    
 
 class cafes_model(models.Model):
      imagen = models.ImageField(blank=True, null = True,upload_to='cafes/')
      titulo = models.CharField(max_length=42, blank = True, null = True)
-     descripcion =  models.CharField(max_length=184, blank = True, null = True)
+     descripcion =  models.CharField(max_length=70, blank = True, null = True)
      informacion = models.CharField(max_length=184, blank = True, null = True)
      precio = models.CharField(max_length=50, blank = True, null = True)
-
+     def __str__(self)-> str:
+          return self.titulo
 
 class brunch_model(models.Model):
      imagen = models.ImageField(blank=True, null = True,upload_to='brunchs/')
@@ -52,6 +56,9 @@ class brunch_model(models.Model):
     
      precio = models.CharField(max_length=50, blank = True, null = True)
      
+     def __str__(self)-> str:
+          return self.titulo
+     
  
 
 class populares_model(models.Model):
@@ -61,7 +68,9 @@ class populares_model(models.Model):
      informacion = models.CharField(max_length=184, blank = True, null = True)
      precio = models.CharField(max_length=50, blank = True, null = True)
      
-     
+         
+     def __str__(self)-> str:
+          return self.titulo
      
 
 class login_model(models.Model):
