@@ -228,7 +228,7 @@ margin: 0px;
         width: 50%;
         height: 40%;
         grid-template-columns: repeat(1,1fr 30px 1fr 10px);
-        grid-template-rows: repeat(1,50px  100px 50px 50px);
+        grid-template-rows: repeat(1,50px  100px 20px 50px);
         margin-top: 15%;
 
         -webkit-animation-name: animarsuperior;
@@ -256,10 +256,17 @@ margin: 10px;
   }
 
 
+  .modal_contenido h4{
+    font-size: 20px;
+  }
 .modal_contenido p{
     margin-top: 5px;
     font-size: 15px;
 }
+
+.modal_contenido h3 {
+    font-size: 20px;
+  }
 
 }
 
