@@ -112,7 +112,7 @@
                 </div>-->
             <div class="carrousel">
     <div class="targeta_populares">
-                <img src="{{ po.imagen.url }}" id = '{{ p.id }}' >
+                <img src="{{ po.imagen.url }}" id = '{{ p.id }}'  >
                 <!--<img src="{{ po.imagen.url }}" id = '{{ p.id }}' onclick="abrir_funcion_populares({{ po.id }},'{{ po.titulo }}')">-->
                 <h4>{{ po.titulo }}</h4> 
                 <p>{{ po.precio }}</p>
@@ -160,7 +160,7 @@
             <div class="modal" id='{{ p.titulo }}'>
                 <div id="modal_contenido" class="modal_contenido">
                     {% if p.imagen %}
-                    <img src={{ p.imagen.url }} id="modal_imagen" class="modal_imagen"> 
+                    <img src={{ p.imagen.url }} id="modal_imagen" class="modal_imagen" > 
                     {% endif %}
                     <h4>{{ p.titulo }}</h4>
                     <p>{{ p.informacion|safe }}</p>
@@ -173,7 +173,7 @@
                    
                     {% if p.imagen %}
 
-                 <img src={{ p.imagen.url }} onclick="abrir_funcion({{ p.id }},'{{ p.titulo }}')"> 
+                 <img src={{ p.imagen.url }} onclick="abrir_funcion({{ p.id }},'{{ p.titulo }}')" loading="lazy"> 
 
                             
                     {% endif %}
@@ -209,7 +209,7 @@
                   <div class="modal" id='{{ b.titulo }}'>
                     <div id="modal_contenido" class="modal_contenido">
                         {% if b.imagen %}
-                        <img src={{ b.imagen.url }} id="modal_imagen" class="modal_imagen"> 
+                        <img src={{ b.imagen.url }} id="modal_imagen" class="modal_imagen" loading="lazy"> 
                         {% endif %}
                         <h4>{{ b.titulo }}</h4>
                         <p>{{ b.informacion|safe }}</p>
@@ -220,10 +220,10 @@
            
                 <div class="targeta_brunch">
                     {% if b.imagen %}
-                    <img src={{ b.imagen.url }}>
+                    <img src={{ b.imagen.url }} onclick="abrir_funcion_brunch({{ b.id }},'{{ b.titulo }}')" >
                     {% endif %}
                   <h4>{{ b.titulo }}</h4>
-                    <div class="productos_brunch">
+                    <div class="productos_brunch" >
                     <p>{{ b.p1 }}</p>
                     <p>{{ b.p2 }}</p>
                     <p>{{ b.p3 }}</p>
@@ -263,7 +263,7 @@
          
                  <div class="targeta">
                     {% if s.imagen %}
-                    <img src={{ s.imagen.url }}>
+                    <img src={{ s.imagen.url }} onclick="abrir_funcion_salados({{ s.id }},'{{ s.titulo }}')" loading="lazy">
                     {% endif %}
                     <div class="contenido_targeta">
                     <h4>{{ s.titulo|safe }}</h4>
@@ -307,7 +307,7 @@
         
                  <div class="targeta">
                     {% if be.imagen %}
-                    <img src={{ be.imagen.url }}>
+                    <img src={{ be.imagen.url }} onclick="abrir_funcion_bebidas({{ be.id }},'{{ be.titulo }}')" loading="lazy">
                     {% endif %}
                     <div class="contenido_targeta">
                     <h4>{{ be.titulo|safe }}</h4>
@@ -350,7 +350,7 @@
 
        <div class="targeta">
         {% if c.imagen %}
-        <img src={{ c.imagen.url }}>
+        <img src={{ c.imagen.url }} onclick="abrir_funcion_cafes({{ c.id }},'{{ c.titulo }}')" loading="lazy">
         {% endif %}
         <div class="contenido_targeta">
           <h4>{{ c.titulo|safe }}</h4>

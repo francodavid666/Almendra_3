@@ -228,7 +228,7 @@ margin: 0px;
         width: 50%;
         height: 40%;
         grid-template-columns: repeat(1,1fr 30px 1fr 10px);
-        grid-template-rows: repeat(1,50px  100px 100px 50px);
+        grid-template-rows: repeat(1,50px  100px 50px 50px);
         margin-top: 15%;
 
         -webkit-animation-name: animarsuperior;
@@ -239,11 +239,12 @@ margin: 0px;
 }
 .modal .modal_imagen{/*IMAGEN*/
     width: 100%;
-    height:72%;
+    height:88%;
     grid-column: 1/2;
     grid-row: 1/5;
 margin: 10px;
 
+}
     @keyframes animatetop {
     from {top:-300px; opacity:0;} 
     to {top:0; opacity:1}
@@ -255,6 +256,10 @@ margin: 10px;
   }
 
 
+.modal_contenido p{
+    margin-top: 5px;
+    font-size: 15px;
+}
 
 }
 
