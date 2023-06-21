@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from .models import *
 
-# Create your views here.
+# Create your views here..
 '''
 def almendra_web (request):
 
