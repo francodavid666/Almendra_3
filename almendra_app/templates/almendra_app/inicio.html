@@ -292,6 +292,49 @@
             
            
         </section>
+        {% endblock %}
+
+        {% block desayunos %}
+        <section class="grid_container">
+          <h1 class="titulo_section">DESAYUNOS</h1>
+          <div class="container_targeta">
+
+
+      {% for de in form_desayunos %}
+
+    
+
+      <div class="modal" id='{{ be.titulo }}'>
+          <div id="modal_contenido" class="modal_contenido">
+              {% if de.imagen %}
+              <img src={{ de.imagen.url }} id="modal_imagen" class="modal_imagen"> 
+              {% endif %}
+              <h4>{{ de.titulo }}</h4>
+              <p>{{ de.informacion|safe }}</p>
+              <h3>{{ de.precio }}</h3>
+          </div>
+      </div>
+      
+  
+           <div class="targeta">
+              {% if de.imagen %}
+              <img src={{ de.imagen.url }} onclick="abrir_funcion_desayunos({{ de.id }},'{{ be.titulo }}')" loading="lazy">
+              {% endif %}
+              <div class="contenido_targeta">
+              <h4>{{ de.titulo|safe }}</h4>
+          
+              <p>{{ de.descripcion }}</p>
+              <h3>{{ de.precio }}</h3>
+              <img class= 'delete' id = '{{ be.id }}' onclick="abrir_funcion_desayunos({{ de.id }},'{{ be.titulo }}')" src="{% static 'almendra_app/icons/question.png' %}" name="boton50"></a>
+          </div>
+          </div>
+          {% endfor %}
+      </div>
+      
+      
+      
+  </section>
+        
     {% endblock %}
 
            

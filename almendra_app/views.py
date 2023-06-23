@@ -18,13 +18,15 @@ def inicio (request):
     form_bebidas = bebidas_model.objects.all()
     form_cafes  = cafes_model.objects.all()
     form_populares = populares_model.objects.all()
+    form_desayunos = desayunos_model.objects.all()
     
     return render (request,'almendra_app/inicio.html',{'form':form,
                                                 'form_brunch':form_brunch,
                                                 'form_salados': form_salados,
                                                 'form_bebidas':form_bebidas,
                                                 'form_cafes':form_cafes,
-                                                'form_populares':form_populares
+                                                'form_populares':form_populares,
+                                                'form_desayunos':form_desayunos
                                                 })
 
 

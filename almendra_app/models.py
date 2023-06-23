@@ -82,3 +82,15 @@ class login_model(models.Model):
     def __str__(self):
      return f'usuario: {self.id}'
 '''
+
+
+class desayunos_model (models.Model):
+
+     imagen = models.ImageField(blank=True, null = True,upload_to='desayunos/')
+     titulo = models.CharField(max_length=50, blank = True, null = True)
+     descripcion =  models.CharField(max_length=70, blank = True, null = True)
+     informacion = models.CharField(max_length=184, blank = True, null = True)
+     precio = models.CharField(max_length=50, blank = True, null = True)
+
+     def __str__(self)-> str:
+          return self.titulo
