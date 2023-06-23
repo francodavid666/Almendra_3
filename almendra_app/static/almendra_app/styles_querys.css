@@ -922,16 +922,16 @@ footer{
     overflow: hidden;
     
 }
-.cafe_onload img{
-    height: 100vh;
-}
+
 
 .background_img{
   height: 100vh;
+  width: 200vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+    
     
 }
 /*LOADER*/
