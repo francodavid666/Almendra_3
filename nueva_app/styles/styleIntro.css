@@ -1,0 +1,98 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: #EAC696;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+
+.title-container{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.title{
+  font-size: 0;
+}
+
+
+
+article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.logo{
+  
+    width: 200px;
+    height: 200px;
+}
+
+.icono-shop{
+    width: 100%;
+    height: 100%;
+}
+
+.linea {
+    border-top: 10px solid #ef0d0d; /* Cambiar el color y el grosor según tus preferencias */
+    margin: 20px 0; /* Espacio vertical opcional */
+  }
+
+
+  .button-intro{
+    border: none;
+    height: 50px;
+    border: solid #c9822b 3px;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #623701;
+    color: white;
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+  }
+
+.icono-machine{
+   display: none;
+   position: absolute;
+   width: 80px;
+   height: 80px;
+   transition: 1s;
+
+   /* Aplicar la animación al elemento */
+   animation: agrandar 1s ease-in-out ease-in;
+
+
+   
+}  
+
+
+@keyframes agrandar {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.5);
+    }
+  }
+  
+
+
