@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" ></script> 
+
+    <link rel="stylesheet" href="{% static 'appPedidos/styles/stylesPreferenciass.css' %}">
+   
+
+
+
+
+    <title>Menu de la App</title>
+</head>
+<body>
+    
+    <header>
+        <div class="icon-arrow">
+       <a href="{% url 'inicio' %}"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+       </a>    
+    </div>
+    <h1 class="title-menu">Preferencia</h1>
+    </header>
+
+    <article class="imagen-producto_div">
+        <img src={{ model_product.imagen.url }} class="imagen-producto">
+        
+    </article>
+
+
+    <article class="product-container">
+        <form name="form" action="" method="post" class="formulario">{% csrf_token %}
+        <ul class="list-product">
+            <li class="container-cantidad">
+                <div class="info">
+                    <h2>{{ model_product.titulo }}</h2>
+                    <p id="valorProducto"  value="2">{{ model_product.precio }}</p>
+                  
+                </div>
+                <div class="selecionar-cantidad">
+                    <input type="number" value=0 id="inputCantidad" min="0" max="3" class="input-number"  {{ form.cantidad }}
+                   
+                    <button type='button'class="button-cantidad button-add" id="buttonAdd">+</button>
+                    <button type='button' class="button-cantidad button-subt" id="buttonSubt">-</button>
+                </div>  
+            </li>
+            <li class="seleccionar-tamaño">
+                <div class="info">
+               
+                <h2>Tamaño</h2>
+            
+           
+            </div>
+                <div class="coffes-img" >
+                <button  value ="Cafe Chico" id="coffeSmall" class="button-option" type='button'> 
+               {{ form.tamanio }}
+               {{ form.tamanio_precio }}
+                    <label for="cafe chico" type="radio" value ="Cafe Chico">    
+                                  
+                     <svg   type="radio" id="coffeSmallImg" class='coffe-small coffe' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: grey;transform: ;msFilter:;"><path d="M7 22h10a1 1 0 0 0 .99-.858L19.867 8H21V6h-1.382l-1.724-3.447A.998.998 0 0 0 17 2H7c-.379 0-.725.214-.895.553L4.382 6H3v2h1.133L6.01 21.142A1 1 0 0 0 7 22zm10.418-11H6.582l-.429-3h11.693l-.428 3zm-9.551 9-.429-3h9.123l-.429 3H7.867zM7.618 4h8.764l1 2H6.618l1-2z"></path></svg>
+                      
+                    </label>
+                </button>
+                <button  type='button' value ="Cafe Mediano" class="button-option" type='button' id="coffeMedium"> 
+                <svg type="radio" id="coffeMediumImg" class='coffe-medium coffe' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: grey;transform: ;msFilter:;"><path d="M7 22h10a1 1 0 0 0 .99-.858L19.867 8H21V6h-1.382l-1.724-3.447A.998.998 0 0 0 17 2H7c-.379 0-.725.214-.895.553L4.382 6H3v2h1.133L6.01 21.142A1 1 0 0 0 7 22zm10.418-11H6.582l-.429-3h11.693l-.428 3zm-9.551 9-.429-3h9.123l-.429 3H7.867zM7.618 4h8.764l1 2H6.618l1-2z"></path></svg>
+
+                </button>
+                <button  type='button' value ="Cafe Grande" class="button-option" type='button' id="coffeLarge"> 
+                    <svg type="radio" id="coffeLargeImg" class='coffe-large coffe' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: grey;transform: ;msFilter:;"><path d="M7 22h10a1 1 0 0 0 .99-.858L19.867 8H21V6h-1.382l-1.724-3.447A.998.998 0 0 0 17 2H7c-.379 0-.725.214-.895.553L4.382 6H3v2h1.133L6.01 21.142A1 1 0 0 0 7 22zm10.418-11H6.582l-.429-3h11.693l-.428 3zm-9.551 9-.429-3h9.123l-.429 3H7.867zM7.618 4h8.764l1 2H6.618l1-2z"></path></svg>
+    
+                    </button>
+                </div>
+            </div>    
+            </li>
+            <li class="seleccionar-azucar">
+                    <div class="info">
+                        <h2>Azucar</h2>
+                    </div>
+
+                    <div class="sugar-container">
+                        {{ form.azucar}}
+                    <div class="sugar-1 no-sugar">
+                        <button  id="sinAzucarButton" class="button-azucar" type='button'>
+                        <img class='sugar-small sugar sugar-icon'src="{% static 'appPedidos/img/no-sugar.png' %}" >
+                         </button>
+                    </div>
+                    <div class="sugar-1">
+                        <button value ="1 de azucar" id="unoAzucarButton" class="button-azucar" type='button'>
+                        <img class='sugar-small sugar sugar-icon'src="{% static 'appPedidos/img/packet_1.png' %}" >
+                    </button>
+                    </div>
+                    <div class="sugar-2">
+                        <button value ="2 de azucar" id="dosAzucarButton" class="button-azucar" type='button'>
+                        <img class='sugar-small sugar sugar-icon'src="{% static 'appPedidos/img/packet_2.png' %}" >
+                    </button>
+                    </div>
+
+                    <div class="sugar-2">
+                        <button value ="3 de azucar" id="tresAzucarButton" class="button-azucar" type='button'>
+                        <img class='sugar-small sugar sugar-icon'src="{% static 'appPedidos/img/packet_3.png' %}" >
+                    </button>
+                    </div>
+                    
+                </div>
+            </li>
+            <li class="seleccionar-azucar">
+                <div class="info">
+                    <h2>Adicional</h2>
+                </div>
+                <div class="sugar-container">
+                    {{ form.adicional }}
+                <div class="sugar-2">
+                    <button value ="Con canela" id="conCanelaButton" class="button-adicional" type='button'>
+                    <img class='sugar-small sugar sugar-icon' src="{% static 'appPedidos/img/taste.png' %}" >
+                    </button> 
+                </div>
+                <div class="sugar-2">
+                    <button value ="Con crema" id="conCremaButton" class="button-adicional" type='button'>
+                    <img class='sugar-small sugar sugar-icon' src="{% static 'appPedidos/img/whip-cream.png' %}" >
+               </button>
+                </div>
+            </div>
+        </li>
+        </ul>
+        <div class="total-container">
+        <h1>Total</h1>
+        <h2> {{ form.total }}</h2>
+        </div>
+   
+        <div class="button-submit-container">
+        <button type="submit" name="form" class="button-submit">Aceptar Datos</button>
+         </div> 
+    </form>
+    </article>
+
+    
+
+    <script src="{% static 'appPedidos/js/scripts.js' %}"></script>
+
+
+</body>
+</html>

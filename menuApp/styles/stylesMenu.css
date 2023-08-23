@@ -1,0 +1,467 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    
+}
+body{
+    background-color:#F9F5F6;
+    width: 100%;
+    font-family: 'Sen', sans-serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    
+    height: 60px;
+    
+}
+
+.container-titulo_usuario{
+    
+    width: 80%;
+    padding: 5px;
+   
+}
+
+.titulo-usuario{
+    font-size: 13px;
+}
+.container-button_menu{
+
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content:flex-end;
+
+}
+
+/*form buscqueda*/
+.container-formulario_busqueda{
+    width: 100%;
+    height: 60px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formulario_busqueda{
+    width: 100%;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    
+}
+.input-busqueda{
+width: 90%;
+height: 35px;
+border: none;
+border-radius: 15px;
+text-align: center;
+background-color: rgb(231, 231, 231);
+}
+
+.input-busqueda::placeholder{
+    left: 20px;
+    top: 10px;
+    color: grey;
+    font-family: "Font Awesome 5 Free";
+    font-weight:900;
+    font-size: 10px;
+    border: none;
+ 
+}
+
+.input-busqueda:focus{
+    outline: none;
+}
+
+.button-busqueda{
+    position: absolute;
+    right:6%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+}
+
+.container-ofertas{
+   height: 250px;
+   background-color:#F9F5F6;
+    display: flex;
+    align-items:self-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.titulo-ofertas{
+    font-size: 18px;
+    
+}
+
+.container-card{
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content:flex-start;
+   flex-wrap: nowrap;
+   overflow: scroll;
+  
+}
+
+.card-product-oferta{
+    flex: 1 0 auto;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color:rgb(233, 233, 233);
+    box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+    width: 220px;
+    height: 180px;
+    border-radius: 15px;
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.imagen-card{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 96%;
+    height: 70%;
+   
+ 
+}
+
+.imagen-card img{
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.info-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.titulo-card_ofertas{
+    font-size: 18px;
+}
+
+.box-icon{
+    background-color: green;
+    border-radius: 15px;
+    height: 25px;
+}
+
+.mini-descripcion{
+    color:  grey;
+    font-size: 13px;
+}
+
+
+/*populares*/
+
+.container-titulo_populares{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.titulo-populares{
+    font-size: 15px;
+}
+
+.ver-todos{
+    color: green;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+.container-product{
+   display: grid;
+   grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+        130px,
+        1fr
+    )
+   );
+   gap: 10px;
+}
+
+.card-product{
+    background-color:rgb(233, 233, 233);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 130px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 1px;
+    box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+}
+
+
+.product-img{
+    height: 50%;
+    width: 92%;
+    margin-top: 4%;
+}
+
+
+.product-img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-info{
+    width: 90%;
+    font-size: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.card-info h2{
+    font-weight: bold;
+}
+
+
+.precio-button{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 90%;
+    font-weight: bold;
+   
+}
+.button-add{
+
+    border-radius: 16px;
+    height: 24px;
+   
+}
+
+
+/* ver menu*/
+
+.container-ver_menu{
+    margin-top: 20px;
+    height: 100px;
+    border-radius: 12px;
+    background-image: url('/menuApp/img/fondoCafe.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title-ver_menu {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+    color: rgba(240, 255, 240, 0.767);
+    font-size: 20px;
+    font-weight: 600px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(52, 51, 51, 0.344);
+    transition: 1s;
+    cursor: pointer
+}
+
+.title-ver_menu:hover{
+    background-color: rgba(52, 51, 51, 0.797);
+    color: rgb(240, 255, 240);
+}
+
+
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+
+
+}
+
+.list-app{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: green
+    ; /
+}
+
+.list-app >li{
+   margin-bottom: 5px;
+   margin-top: 5px;
+}
+
+.container-menu_desplegable{
+    background-color: rgb(231, 231, 231);
+    box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
+position: absolute;
+top:80px;
+left: 500px;
+width: 80%;
+height: 200px;
+display: flex;
+justify-content: flex-start;
+flex-direction: column;
+border-radius: 10px;
+ }
+
+.menu-desplegable{
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.menu-desplegable{
+    display: flex;
+   
+}
+
+.titulo-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.button-theme_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.button-theme_container h3{
+   margin: 10px;
+}
+
+.button-theme{
+    background-color: rgb(47, 47, 47);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 51px;
+    margin-right: 20px;
+}
+
+
+
+.titulo-menu{
+width: 100%;
+margin-top: 10px;
+margin-left: 10px;
+border-radius: 10px;
+}
+.menu-vertical_tema >li{
+    list-style:none; 
+}
+
+.menu-vertical_tema{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(146, 146, 146);
+    border-radius: 16px;
+}
+
+
+
+    
+
+
+
+.redondo-theme{
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    position: absolute;
+    top: 51px;
+    left: 120px;
+    cursor: pointer;
+}
+
+
+/*lista redes*/
+/*menu-horizontal*/
+
+.titulo-redes{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+    }
+
+.menu-horizontal_container{
+    width: 100%;
+   margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu-horizontal_container h2{
+  font-size: 15px;
+}
+
+.link-menu{
+    height: 30px;
+    width: 30px;
+
+}
+
+.log-out{
+  
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.log-out>a{
+    text-decoration: none;
+    font-weight: bold;
+}

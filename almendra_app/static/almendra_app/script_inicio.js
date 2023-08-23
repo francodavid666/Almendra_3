@@ -1,147 +1,126 @@
-const onload = document.getElementById('onload')
 
-const hidden = document.getElementsByClassName('.hidden')
+const buttonTheme = document.getElementById('buttonTheme')
+const redondoTheme = document.getElementById('redondoTheme')
+
+/*body*/ 
+const body = document.getElementById('body')
+
+/*containerOfertas*/
+const containerOfertas = document.getElementById('containerOfertas')
+
+/*cardProductOferta*/ 
+const cardProductOferta = document.querySelectorAll('.card-product-oferta');
+
+/*cardProductOferta*/ 
+
+const cardProduct = document.querySelectorAll('.card-product');
+
+/*menu desplegable*/
+const menuDesplegable = document.getElementById('menuDesplegable')
+
+/*boton menu*/ 
+const buttonMenu = document.getElementById('buttonMenu')
 
 
-const cafe_onload= document.getElementById('cafe_onload')
+redondoTheme.addEventListener('click',()=>{
+    moverFuncion()
+})
 
 
 
-window.onload=function(){
+function moverFuncion(){
+     /*TEMA EN NEGRO*/ 
+    redondoTheme.style.left= '72%'
+    redondoTheme.style.transition= '2s'
+    redondoTheme.style.backgroundColor='rgb(146, 146, 146)'
+
+    /*button theme*/
+    buttonTheme.style.backgroundColor='black'
    
-    cafe_onload.style.display = 'none';
+    /*body*/
+    body.style.backgroundColor='#454545' 
+    body.style.color='#F9F5F6' 
+    body.style.transition= '1s'
+
+  
+    /*containerOfertas */
+    containerOfertas.style.backgroundColor = '#454545' 
+    containerOfertas.style.transition= '1s'
+    
+
+     /*cardProduct*/
+
+     cardProduct.forEach(elemento => {
+        elemento.style.backgroundColor = '#272829' 
+        elemento.style.transition= '1s'
+        // Cambia el color a azul (puedes usar cualquier color válido)
+      });
+   /*cardProductOferta*/
+      cardProductOferta.forEach(elemento => {
+        elemento.style.backgroundColor = '#272829' // Cambia el color a azul (puedes usar cualquier color válido)
+ 
+      });
    
-   
+      menuDesplegable.style.backgroundColor='#272829'
+
+console.log(redondoTheme.offsetLeft)
+        /*TEMA EN BLANCO*/ 
+    if(redondoTheme.offsetLeft == 194){
+        redondoTheme.style.left= '51%'
+        redondoTheme.style.backgroundColor='white'
+
+        buttonTheme.style.backgroundColor='rgb(146, 146, 146)'
+            /*body*/
+        body.style.backgroundColor='#F9F5F6' 
+        body.style.transition= '2s'
+        body.style.color= 'black'
+         /*containerOfertas */
+    containerOfertas.style.backgroundColor = '#F9F5F6' 
+  
+
+    cardProductOferta.forEach(elemento => {
+        elemento.style.backgroundColor = 'rgb(233, 233, 233)' 
+      });
+
+      cardProduct.forEach(elemento => {
+        elemento.style.backgroundColor = 'rgb(233, 233, 233)'
+        elemento.style.transition= '1s' 
+      });
+
+      menuDesplegable.style.backgroundColor='rgb(233, 233, 233)'
+
+       }
 }
 
 
+/*boton menu  60px*/ 
 
-const modal= document.getElementById('Cerveza')
-const boton = document.getElementById(50)
+let boton = false
 
-console.log(boton)
+buttonMenu.addEventListener('click',()=>{
+if(boton==false){
+  openMenu()
+  boton = true
+}
+else{
+  closeMenu()
+  boton = false
+}
 
-
-    /* boton.addEventListener('click',function(){
-            modal.style.display = 'block';
-        })
-
-        window.addEventListener('click',function(event){
-            if (event.target==modal){
-                modal.style.display='none'
-            }
-        })
-*/
-
-/*function abrir_funcion(id,titulo){  
-   let boton = document.getElementById(titulo)
-   let modal= document.getElementById(id,titulo)
-            
-         modal.style.display = 'block';
-      
-        
-            
-        window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-            
-   }*/
+})
 
 
-   function abrir_funcion_populares(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-} 
+menuDesplegable.style.display='none'
 
+function openMenu(){
+  menuDesplegable.style.display='block'
+  menuDesplegable.style.left='26%'
 
+}
+ 
+function closeMenu(){
 
-function abrir_funcion(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-}   
+  menuDesplegable.style.display='none'
 
+}
 
-function abrir_funcion_brunch(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-} 
-
-
-function abrir_funcion_salados(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-} 
-
-
-function abrir_funcion_bebidas(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-} 
-
-
-function abrir_funcion_cafes(id,titulo){  
-    const boton = document.getElementById(id)
-    const modal= document.getElementById(titulo)
-    modal.style.display = 'block';
-   /*console.log(boton)
-   console.log(modal)
-  */
-    
-    window.addEventListener('click',function(event){
-        if (event.target==modal){
-        modal.style.display='none'
-        }
-       })
-} 

@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
 from almendra_app.forms import *
 from django.contrib import messages
-
 from .models import *
+from django.template import loader
+from django.http import HttpResponse
+from appPedidos.models import *
 
-# Create your views here..
-'''
-def almendra_web (request):
 
- return HttpResponse(request,'almendra-webpage.up.railway.app')
-'''
+
 def inicio (request):
 
     form = pasteleria_model.objects.all()

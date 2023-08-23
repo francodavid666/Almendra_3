@@ -56,7 +56,7 @@
             <a href="{% url 'brunch' %}">Brunch´s</a>
             <a href="{% url 'bebidas' %}">Bebidas</a>
             <a href="{% url 'salados' %}">Salados</a>
-            <a href="{% url 'cafes' %}"">Cafes</a>
+            <a href="{% url 'cafes' %}">Cafes</a>
         </div>
       
     </section>
@@ -130,6 +130,7 @@
                     <h4>{{ p.titulo }}</h4>
                     <p>{{ p.informacion|safe }}</p>
                     <h3>{{ p.precio }}</h3>
+                    <a href="#">Pedir</a>
                 </div>
             </div>
             
@@ -146,11 +147,9 @@
                     <h4>{{ p.titulo|safe }}</h4>
                     <p>{{ p.descripcion }}</p>
                     <h3>{{ p.precio }}</h3>
+                    
                     <img class= 'delete' id = '{{ p.id }}' onclick="abrir_funcion({{ p.id }},'{{ p.titulo }}')" src="{% static 'almendra_app/icons/question.png' %}" name="boton50"></a>
-                   <!-- <a href="#" onclick = 'informacion_brunch({{ b.id }})'> <img class= 'delete'id= '{{ p.categoria }}' src="{% static 'almendra_app/icons/question.png' %}" alt=""></a>
-
-                   <img class= 'delete' id = '{{ p.categoria }}' src="{% static 'almendra_app/icons/question.png' %}" alt=""></a>
-                   -->
+                    
                 </div>
             </div>
             

@@ -6,6 +6,8 @@ from django.urls import re_path
 from django.conf import settings
 from django.views.static import serve
 
+
+
 urlpatterns = [
     path('', inicio, name = 'inicio'),
     path('inicio/', inicio_2, name = 'inicio_2'),

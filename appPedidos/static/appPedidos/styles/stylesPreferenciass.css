@@ -1,0 +1,331 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Sen', sans-serif;
+    width: auto;
+    height: auto;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: antiquewhite;
+
+}
+
+header{
+    background-color: #6C3428;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.imagen-producto_div{
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-producto{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.icon-arrow{
+    position: absolute;
+    right: 90%;
+}
+
+.product-container{
+    list-style: none;
+    width: 100%;
+    height: 50%;
+}
+
+
+
+.container-cantidad{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.info{
+    width: 40%;
+}
+.selecionar-cantidad{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-cantidad{
+    width: 40px;
+    height: 30px;
+    border: none;
+    border: solid black 1px;
+ 
+    
+}
+.input-number{
+    width: 20px;
+    height: 30px;
+    margin-top: 3px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1px;
+    background-color: antiquewhite;
+}
+
+.button-subt{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.button-add{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+/*tamaño*/
+
+.seleccionar-tamaño{
+    background-color: antiquewhite;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.coffes-img{
+ 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+margin-right: 42px;
+}
+
+
+.coffe{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.coffe-small{
+    width: 30px;
+    height: 30px;
+  
+}
+
+.coffe-medium{
+    width: 35px;
+    height: 35px;
+  
+}
+.coffe-large{
+    width: 40px;
+    height: 40px;
+
+}
+
+.seleccionar-azucar{
+    display: flex; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.3);
+
+}
+.sugar-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.sugar{
+    width: 50px;
+    height: 50px;
+}
+
+.sugar-icon{
+    width: 40px;
+    height: 40px;
+}
+/*aceptar*/
+.total-container{
+    margin-top:1px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: antiquewhite;
+
+}   
+
+.formulario{
+    height: 60%
+}
+
+.list-product{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    
+}
+.list-product >li{
+    height: 70px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.3);
+
+    gap: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+footer{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    top:92%;
+    width: 100%;
+    height: 50px;
+
+    box-shadow: 1px -1px 2px 0px rgba(0,0,0,0.3);
+
+}
+
+.list-app{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+    height: 100%;
+}
+
+.list-app >li{
+   margin-bottom: 10px;
+}
+
+
+/*titulos y fuente*/
+
+.title-menu{
+    font-size: 26px;
+}
+
+.button-submit-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.button-submit{
+    border-radius: 30px;
+    border: none;
+    width: 60%;
+    height: 50px;
+    background-color: brown;
+    position: absolute;
+    top: 600px;
+    font-size: 20px;
+    color: white;
+}
+
+
+/*buttoncafe*/
+
+.button-option{
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 30px;
+ 
+
+
+}
+
+
+.button-azucar:hover{
+    background-color: rgb(250, 191, 113);
+}
+
+
+
+/*.input_tamanio{
+ z-index: -1;
+ position: absolute;
+}*/
+
+
+.button-azucar{
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+}
+
+
+.input_azucar{
+    z-index: -1;
+    position: absolute;
+}
+
+
+.button-adicional{
+    border: none;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    transition: 0.5s;
+}
+
+.button-adicional:hover{
+    background-color: rgb(250, 191, 113);
+}
+
+
+.input_adicional{
+    z-index: -1;
+    position: absolute;
+}
+.input_tamanio-precio{
+    z-index: -1;
+    position: absolute;
+}
+
+.input_tamanio{
+    z-index: -1;
+    position: absolute;
+}

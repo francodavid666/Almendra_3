@@ -55,8 +55,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'almendra_app',
+    
     'ckeditor',
     'ckeditor_uploader',
+    'appPedidos',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -95,7 +97,7 @@ ROOT_URLCONF = 'almendra_proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],#aca no oba lo que esta adentro del los corchetes
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -190,7 +192,7 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR, 'almendra_app/static'),
 )
 
-# Default primary key field type
+# Default primary key field typef
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

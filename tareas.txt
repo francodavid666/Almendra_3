@@ -1,6 +1,31 @@
-ACOMODAR EL BRUNCH DE LAS OPAIONES
+crear el menu de settings para el menu principal.
+- la funcion del carrito
+- la funcion de las estrellas o like
+
+
+-El mapa para ver el lugar
+
+settings:
+Tus pedidos:
+
+
+modo oscudo:
+white
+dark
+
+nuestras redes:
+intagram
+watsap
+
+salir de cuenta:
 
 
 
 
-https://startbootstrap.com/previews/business-casual
+MENU FOOTER
+perfil:
+cambiar foto de perfil
+cambiar datos de perfil
+tu cafe favorito
+menu con cuadrados
+https://ar.pinterest.com/pin/97179304452041280/

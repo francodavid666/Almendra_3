@@ -1,22 +1,58 @@
 {% extends 'almendra_app/inicio.html' %}
 
+{% load static %}
 
-{% block populares %}
+
+{% block ofertas %}
 {% endblock %}
 
+{% block product-section %}
+<section>
+    <div class="container-titulo_populares">
+        <h2 class="titulo-populares">
+            Populares
+        </h2>
+        <a  class='ver-todos' href="#"> Ver todos</a>
+    </div>
+
+ 
+   
+<section class="section-product">
+    <div class="container-product">
+        {% for s in form_salados %}
+        <div id="cardProduct"  class="card-product">
 
 
-{% block pasteleria %}
-{% endblock %}
+            <div class="product-img">
+                {% if s.imagen %}
+                    <img src={{ s.imagen.url }}  alt="">
+                    {% endif %}              
+                  </div>
+           
+            <div class="card-info">
+                    <h2>{{ s.titulo|safe }}</h2>
+                   
+                    <p>{{ s.descripcion }}</p>
+            </div>
 
+            <div class="precio-button">
+                <p>{{ s.precio }}</p>
+                <div class="button-add">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: green;transform: ;msFilter:;"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"></path><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path></svg>
+                </div>
+            </div>
+        </div>
 
-{% block brunch %}
-{% endblock %}
+        {% endfor %}
+          
+        </div>
+    </div>  
+</section>        
+</section>
 
+{% endblock %}  
+{% block script %}
+<script src="{% static 'almendra_app/script_product.js' %}"></script>
+{% endblock %}  
 
-{% block bebidas %}
-{% endblock %}
-
-
-{% block cafes %}
-{% endblock %}
+ 
