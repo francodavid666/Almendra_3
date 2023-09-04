@@ -5,28 +5,25 @@ from .models import *
 from django.template import loader
 from django.http import HttpResponse
 from appPedidos.models import *
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def inicio (request):
-
-    form = pasteleria_model.objects.all()
-    form_brunch = brunch_model.objects.all()
-    form_salados = salados_model.objects.all()
-    form_bebidas = bebidas_model.objects.all()
-    form_cafes  = cafes_model.objects.all()
-    form_populares = populares_model.objects.all()
-    form_desayunos = desayunos_model.objects.all()
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order,created = Order.objects.get_or_create(customer =customer,complete=False )
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else:
+        items =[]
+        cartItems  = order['get_cart_items']
+        order = {'get_cart_total':0,'get_cart_items':0,'shipping':False}
+    form  = Product.objects.all()    
+    context = {'items':items,'order':order,'cartItems':cartItems,'form':form}
     
-    return render (request,'almendra_app/inicio.html',{'form':form,
-                                                'form_brunch':form_brunch,
-                                                'form_salados': form_salados,
-                                                'form_bebidas':form_bebidas,
-                                                'form_cafes':form_cafes,
-                                                'form_populares':form_populares,
-                                                'form_desayunos':form_desayunos
-                                                })
-
+    form_product = Product.objects.all()
+    return render (request,'almendra_app/inicio.html',context)
 
 def inicio_2 (request):
 

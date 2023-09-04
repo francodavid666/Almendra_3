@@ -11,8 +11,8 @@ from django.views.static import serve
 urlpatterns = [
     path('', inicio, name = 'inicio'),
     path('inicio/', inicio_2, name = 'inicio_2'),
-   #path('almendra-webpage.up.railway.app/', almendra_web, name = 'almendra_web'),
 
+   #path('almendra-webpage.up.railway.app/', almendra_web, name = 'almendra_web'),
     path('brunch/', brunch, name = 'brunch'),
     path('salados/', salados, name = 'salados'),
     path('cafes/', cafes, name = 'cafes'),

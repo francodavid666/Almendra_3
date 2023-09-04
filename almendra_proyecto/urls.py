@@ -21,6 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path
 from django.views.static import serve
+from django.contrib.auth import urls
+#from django.contrib.auth.views import login
 
 from appPedidos import views as appPedidos
 
@@ -28,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include ('almendra_app.urls')),
     path('', include ('appPedidos.urls')),
+    
 
 ] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 

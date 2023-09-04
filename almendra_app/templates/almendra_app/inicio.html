@@ -5,8 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="{% static 'almendra_app/stylesMobile.css' %}">
+    <link rel="stylesheet" href="{% static 'almendra_app/stylesMobile.css' %}">
     <title>Document</title>
+
+    <script type = 'text/javascript'>
+        var user = '{{ request.user }}'
+
+
+
+        function getToken(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+    </script>
 </head>
 <body id="body">
     <header>
@@ -16,12 +39,17 @@
                 <img src="https://cafesabora.com/sites/default/files/%20barista-haciendo-cafe-de-filtro_0.jpg" alt=""> 
                 </div>
                 <div class="titulo-usuario_container">
-                    <h1 class="titulo-usuario">Bienvenido, Franco!!!</h1>
+                   
+                 
+               
+                    <h1 class="titulo-usuario">Bienvenido, {{ user.first_name}}!!</h1>
                 </div>
         </div>
        
         <div class="container-button_menu">
+            <h1>{{cartItems}}</h1> 
             <a href="#">
+               
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M21 4H2v2h2.3l3.521 9.683A2.004 2.004 0 0 0 9.7 17H18v-2H9.7l-.728-2H18c.4 0 .762-.238.919-.606l3-7A.998.998 0 0 0 21 4z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="16.5" cy="19.5" r="1.5"></circle></svg>                
             </a>
           
@@ -32,6 +60,9 @@
         </div>
     </header>
 
+
+
+{% block buscar_producto %}
     <article class= 'container-formulario_busqueda'>
         <form action="" class='formulario_busqueda'>
             <input class='input-busqueda' type="text" placeholder="  Buscar un producto">
@@ -40,7 +71,7 @@
             </button>
         </form>
     </article>
- 
+    {% endblock %}
 {% block ofertas %}
     <section id="containerOfertas" class="container-ofertas">
                 <h2 class="titulo-ofertas">¡Ofertas de la semana!</h2>
@@ -48,26 +79,32 @@
         <div class="container-card carrousel">
 
 
-            {% for po in form_populares %}
+            {% for product in form %}
 
                 <div id="cardProductOferta" class="card-product-oferta">
                     <div class="imagen-card">
-                        {% if po.imagen %}
-                        <img src={{ po.imagen.url }}  alt="">
+                        {% if product.imagen %}
+                        <img src={{ product.imagen.url }}  alt="">
                         {% endif %}
                     </div>
                     <div class="info-product">
                         <div class="info">
-                        <h2 class="titulo-card_ofertas">{{ po.titulo }}</h2>
-                        <p class="mini-descripcion"></p>
+                        <h2 class="titulo-card_ofertas"> {{product.get_total}}</h2>
+                        <p class="mini-descripcion">{{ product.price }}</p>
+                       
                     </div>
                         <div class="box-icon">
-                         <a href="#">
+                            <button data-product={{product.id}} data-action="add" class="btn update-cart">
+                             <a href="{% url 'inicio' %}">Add to Cart</a>   
+                            </button>
+                       <!--  <a href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
-                            </a>
+                            </a>-->
                         </div> 
                     </div>
                 </div>
+                
+              
 
 
                 {% endfor %}
@@ -90,13 +127,13 @@
        
 <section class="section-product">
         <div class="container-product">
-            {% for po in form_populares %}
+            {% for product  in form_populares %}
             <div id="cardProduct"  class="card-product">
 
 
                 <div class="product-img">
-                         {% if po.imagen %}
-                        <img src={{ po.imagen.url }}  alt="">
+                         {% if product.imagen %}
+                        <img src={{ product.imagen.url }}  alt="">
                         {% endif %}              
                       </div>
                
@@ -122,7 +159,7 @@
     </section>
 
     {% endblock %}  
-
+{% block menufooter %}
 <section>
     <div class="container-ver_menu ver-cafes">
           <a  class="title-ver_menu" href="{% url 'cafes' %}">Cafes</a>
@@ -144,7 +181,7 @@
         <a  class="title-ver_menu" href="{% url 'bebidas' %}">Bebidas</a>
     </div>
 </section> 
-
+{% endblock %}  
 
 
     <article id='menuDesplegable' class="container-menu_desplegable">
@@ -192,12 +229,15 @@
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M21.999 8a.997.997 0 0 0-.143-.515L19.147 2.97A2.01 2.01 0 0 0 17.433 2H6.565c-.698 0-1.355.372-1.714.971L2.142 7.485A.997.997 0 0 0 1.999 8c0 1.005.386 1.914 1 2.618V20a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-5h4v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-9.382c.614-.704 1-1.613 1-2.618zm-2.016.251A2.002 2.002 0 0 1 17.999 10c-1.103 0-2-.897-2-2 0-.068-.025-.128-.039-.192l.02-.004L15.219 4h2.214l2.55 4.251zm-9.977-.186L10.818 4h2.361l.813 4.065C13.957 9.138 13.079 10 11.999 10s-1.958-.862-1.993-1.935zM6.565 4h2.214l-.76 3.804.02.004c-.015.064-.04.124-.04.192 0 1.103-.897 2-2 2a2.002 2.002 0 0 1-1.984-1.749L6.565 4zm3.434 12h-4v-3h4v3z"></path></svg>            </li>
             <li>
+                <a href="{% url 'profile' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
+            </a>
             </li>
         </ul>
     </footer>
     {% block script %}
     <script src="{% static 'almendra_app/script_inicio.js' %}"></script>
+    <script src="{% static 'almendra_app/script_carrito.js' %}"></script>
     {% endblock %}
 </body>
 </html>

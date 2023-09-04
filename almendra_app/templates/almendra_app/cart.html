@@ -1,0 +1,86 @@
+{% extends 'almendra_app/inicio.html' %}
+{% load static %}
+
+
+
+
+
+
+
+
+
+{% block buscar_producto %}
+
+<section class="cart-container">
+    <div class="resumen">
+                <div class="btn-comprando">
+                    <button>continuar comprando</button>
+                </div>
+
+                <div class="items">
+                    <h2>Items: <strong>{{order.get_cart_items}}</strong></h2>
+                    <h2>total: <strong>${{order.get_cart_total}}</strong></h2>
+                    <button><a href="{% url 'checkout' %}">Checkout</a></button>
+                </div>
+    </div>
+
+    <table class='tabla' border="1">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>
+                   <img src={{item.product.imagen.url}} width="40px" alt=""> 
+                </td>
+                <td>{{item.product.name}}</td>
+                <td>{{item.product.price}}</td>
+                <td>x: {{item.quantity}}
+                   
+                      <button class='update-cart' data-product={{item.product.id}} data-action="add"><img  src="{% static 'appPedidos/img/up-arrow.png' %}" alt=""></button>  
+                        <img class='update-cart' data-product={{item.product.id}} data-action="remove" src="{% static 'appPedidos/img/down-arrow.png' %}" alt="">
+
+                   
+                </td>
+                <td>{{item.get_total}}</td>
+             
+            </tr>
+          {% endfor %}
+       
+        </tbody>
+    </table>
+
+
+    <div>
+
+        <table class="tabla-products">
+
+        </table>
+
+    </div>
+    
+</section>
+{% endblock %}  
+
+{% block ofertas %}
+
+{% endblock %}  
+
+
+
+{% block product-section %}
+{% endblock %}  
+
+{% block menufooter %}
+
+{% endblock %}  
+
+
+

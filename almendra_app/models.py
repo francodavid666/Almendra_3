@@ -94,3 +94,18 @@ class desayunos_model (models.Model):
 
      def __str__(self)-> str:
           return self.titulo
+     
+
+
+
+
+class Product(models.Model):
+     imagen = models.ImageField(blank=True, null = True,upload_to='products/')
+     name = models.CharField(max_length=50, blank = True, null = True)
+     description =  models.CharField(max_length=70, blank = True, null = True)
+     price = models.FloatField()
+     digital = models.BooleanField(default=False,null=True, blank=False)
+
+     def __str__(self)-> str:
+          return self.name
+

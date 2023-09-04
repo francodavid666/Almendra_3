@@ -1,7 +1,6 @@
 const bgBlanco = document.getElementById('bg-blanco')
 
 
-
 gsap.to('.bg-blanco',{
     scale:0,
     transition:0,

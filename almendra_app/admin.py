@@ -10,4 +10,5 @@ admin.site.register (brunch_model)
 admin.site.register (desayunos_model)
 admin.site.register (populares_model)
 admin.site.register (login_model)
+admin.site.register (Product)
 # Register your models here.

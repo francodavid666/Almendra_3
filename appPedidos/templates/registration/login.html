@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'appPedidos/styles/stylesLogin.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" ></script> 
+
+    <title>Formulario login</title>
+</head>
+<body>
+    <main>
+    <article>
+        <div>
+            <img class="image" src="{% static 'appPedidos/img/login/barista.jpg' %}" alt="">
+        </div>
+        
+        <form action="{% url 'login' %}" method="POST" class="formulario-container">
+            {% csrf_token %}
+<h1 class="titulo-ingresar">Ingresar</h1>
+{{mensaje}}
+<label for="text" class="" placeholder="" type="text">Nombre de usuario</label>
+{{ form.username}}
+<!--<label for="email" class="" placeholder="Email" type="email">Email</label>
+<input type="email" id="email">-->
+
+<label for="contrasena">Contraseña</label>
+{{ form.password }}
+
+<button class="button-aceptar"> <p>Aceptar</p></button>
+<a href="{% url 'register' %}" class="crear-cuenta">¿No tenes cuenta? Registrate</a>
+        </form>
+    </article>
+
+
+
+    <div class="bg-blanco" id="bg-blanco"></div>
+
+</main>
+<script src="{% static 'appPedidos/js/scriptsLogin.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'appPedidos/styles/stylesRegister.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" ></script> 
+
+    <title>Formulario Register</title>
+</head>
+<body>
+    <main>
+    <article>
+        <div >
+            <img class="image" src="{% static 'appPedidos/img/register/barista.jpg' %}" alt="">
+        </div>
+        
+        <form action="{% url 'register' %}" class="formulario-container" method="POST">
+        {% csrf_token %}
+
+
+<h1>Crear Cuenta</h1>
+
+
+{{form.as_table}}
+
+<button class="button-aceptar" type="submit">Aceptar</button>
+
+<a href="{% url 'login' %}" class="crear-cuenta">¿Ya tenes cuenta? Ingresa</a>
+        </form>
+    </article>
+
+
+
+    <div class="bg-blanco" id="bg-blanco"></div>
+
+</main>
+<script src="{% static 'appPedidos/js/scriptsRegister.js' %}"></script>
+
+</body>
+</html>

@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/formularioRegister/stylesFormulario.css">
+    <link rel="stylesheet" href="/formularioLogin/stylesLogin.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" ></script> 
 
-    <title>Formulario</title>
+    <title>Formulario login</title>
 </head>
 <body>
     <main>
     <article>
-        <div>
-            <img class="image" src="/formularioRegister/img/img2.jpg" alt="">
+        <div class="img-container">
+            <img class="image" src="/formularioLogin/img/barista.jpg" alt="">
         </div>
         
         <form action="" class="formulario-container">
-<h1>Crear Cuenta</h1>
+<h1 class="titulo-ingresar">Ingresar</h1>
 <label for="email" class="" placeholder="Email" type="email">Email</label>
 <input type="email" id="email">
 
 <label for="contrasena">Contraseña</label>
 <input type="password" id="contrasena" name="contrasena" required>
 
-<button class="button-aceptar">Aceptar</button>
+<button class="button-aceptar"> <p>Aceptar</p></button>
+<a href="#" class="crear-cuenta">¿No tenes cuenta? Registrate</a>
         </form>
     </article>
 
 
 
-    <div class="bg-blanco" id="'bg-blanco"></div>
+    <div class="bg-blanco" id="bg-blanco"></div>
 
 </main>
-<script src="/formularioLogin/js/scripts.js"></script>
+<script src="/formularioLogin/js/scriptsLogin.js"></script>
 </body>
 </html>
