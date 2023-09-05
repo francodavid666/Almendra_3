@@ -8,6 +8,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class usuario_model (models.Model):
+    # foto_perfil = models.ImageField(blank=True, null = True)
+     nombre =models.CharField(max_length=100,blank = True, null = True)
+     email = models.EmailField(max_length=100,blank = True, null = True)
+     contrasenia = models.CharField(max_length=100,blank = True, null = True)
+     #tags = models.CharField(max_length=100,blank = True, null = True)
      
 class Customer(models.Model):
      user = models.OneToOneField(User,on_delete=models.CASCADE,null=True,blank=True)
@@ -27,12 +33,6 @@ class pedidos_model (models.Model):
 
      #mrt
 
-class usuario_model (models.Model):
-    # foto_perfil = models.ImageField(blank=True, null = True)
-     nombre =models.CharField(max_length=100,blank = True, null = True)
-     email = models.EmailField(max_length=100,blank = True, null = True)
-     contrasenia = models.CharField(max_length=100,blank = True, null = True)
-     #tags = models.CharField(max_length=100,blank = True, null = True)
 
 
 class Order(models.Model):
@@ -78,7 +78,7 @@ class OrderItem(models.Model):
 
 #direcion de envio
 class ShippingAddress(models.Model):
-     customer = models.ForeignKey(usuario_model,on_delete=models.SET_NULL, blank=True, null=True)
+     customer = models.ForeignKey(Customer,on_delete=models.SET_NULL, blank=True, null=True)
      order = models.ForeignKey(Order,on_delete=models.SET_NULL, blank=True, null=True)
      address = models.CharField(max_length=200, null=True)
      city = models.CharField(max_length=200, null=True)

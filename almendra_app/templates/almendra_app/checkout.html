@@ -47,12 +47,9 @@
         <input type="text" id="state" name="state" placeholder="Estado:" required><br><br>
     
         <!-- Campo de Código Postal -->
-        <label for="zip"></label><br>
-        <input type="text" id="zip" name="zip" placeholder="Código Postal:" required><br><br>
-    
-        <!-- Campo de Código Postal Adicional -->
-        <label for="zip2"></label><br>
-        <input type="text" id="zip2" name="zip2" placeholder="Código Postal Adicional:" ><br><br>
+        <label for="zipcode"></label><br>
+        <input type="text" id="zipcode" name="zipcode" placeholder="Código Postal:" required><br><br>
+  
     
     </div>
        <!-- Botón de Enviar -->
@@ -143,16 +140,14 @@
             'address': null,
             'city':null,
             'state':null,
-            'zip':null,
-            'zip2':null,    
+            'zipcode':null,
         }
 
         if(shipping != 'False'){
             shippingInfo.address = form.address.value
             shippingInfo.city = form.city.value
             shippingInfo.state = form.state.value
-            shippingInfo.zip = form.zip.value
-            shippingInfo.zip2 = form.zip2.value
+            shippingInfo.zipcode = form.zipcode.value
         }
 
         if(user == 'AnonymousUser'){
@@ -173,6 +168,9 @@
         .then((data)=>{
             console.log('Succces',data);
             alert('Transaction completed');
+
+            cart = {}
+            document.cookie = 'cart=' + JSON.stringify(cart) + ';domain=;path=/'
             window.location.href = "{% url 'inicio' %}"
         })
     }

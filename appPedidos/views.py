@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 import json
 import datetime
 
+from .utils import cookieCart,cartData, guestOrder
+
 
 
 
@@ -223,22 +225,21 @@ def cart(request):
         items = order.orderitem_set.all()
         cartItems = order.get_cart_items
     else:
-        items =[]
-        cartItems  = order['get_cart_items']
-        order = {'get_cart_total':0,'get_cart_items':0,'shipping':False}
+     cookieData = cookieCart(request)
+     cartItems = cookieData['cartItems']
+     order = cookieData['order']
+     items = cookieData['items']
+
     return render(request,'almendra_app/cart.html',{'items':items,'order':order,'cartItems':cartItems})
 
 
 def checkout(request):
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order,created = Order.objects.get_or_create(customer =customer,complete=False )
-        items = order.orderitem_set.all()
-        cartItems = order.get_cart_items
-    else:
-        items =[]
-        order = {'get_cart_total':0,'get_cart_items':0,'shipping':False}
-        cartItems  = order['get_cart_items']
+    
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
     context = {'items':items,'order':order,'cartItems':cartItems}
     return render(request,'almendra_app/checkout.html', context)
 
@@ -251,26 +252,27 @@ def processOrden(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order,created = Order.objects.get_or_create(customer =customer,complete=False )
-        total = float(data['form']['total'])
-        order.transaction_id = transaction_id
 
-        if total == order.get_cart_total:
+        
+
+    else:
+        customer,order = guestOrder(request,data)
+        
+    total = float(data['form']['total'])
+    order.transaction_id = transaction_id
+
+    if total == order.get_cart_total:
             order.complete = True
-        order.save()
+    order.save()
 
-
-        if order.shipping == True:
+    if order.shipping == True:
             ShippingAddress.objects.create(
                 customer = customer,
                 order = order,
                 address= data['shipping']['address'],
                 city= data['shipping']['city'],
                 state= data['shipping']['state'],
-                zip= data['shipping']['zip'],
-                zip2= data['shipping']['zip2'],
-    
+                zipcode= data['shipping']['zipcode'],
             )
 
-    else:
-        print('User is not logged in...')
     return JsonResponse('Paymen complete', safe=False)

@@ -103,7 +103,7 @@ class Product(models.Model):
      imagen = models.ImageField(blank=True, null = True,upload_to='products/')
      name = models.CharField(max_length=50, blank = True, null = True)
      description =  models.CharField(max_length=70, blank = True, null = True)
-     price = models.FloatField()
+     price = models.DecimalField(max_digits=7,decimal_places=2)
      digital = models.BooleanField(default=False,null=True, blank=False)
 
      def __str__(self)-> str:
