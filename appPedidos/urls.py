@@ -7,7 +7,7 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-     path('appPedidos/<id>/', appPedidos, name = 'appPedidos'),
+     path('appPedidos/', appPedidos, name = 'appPedidos'),
      path('accounts/',include('django.contrib.auth.urls')),
      path('register/',register,name='register'), 
      path('login/',Login_request,name='login'), 

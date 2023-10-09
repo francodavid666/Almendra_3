@@ -19,7 +19,7 @@ from .utils import cookieCart,cartData, guestOrder
 
 
 
-def appPedidos(request,id):
+def appPedidos(request):
     if request.method =='POST':
         form = pedidos_form(request.POST)
         if form.is_valid():
@@ -45,12 +45,12 @@ def appPedidos(request,id):
             messages.success (request,'¡Nuevo producto creado!')
     else:
         
-        model_producto = cafes_model.objects.get(id=id)
+        #model_producto = cafes_model.objects.get(id=id)
         model = pedidos_model.objects.all()
         hola = id
         form = pedidos_form()
         return render(request,'especificaciones.html',{'model':model,
-                                                       'model_product':model_producto,
+                                                       #'model_product':model_producto,
                                                     'form':form,
                                                     'hola':hola},
                                                     )
@@ -261,7 +261,7 @@ def processOrden(request):
     total = float(data['form']['total'])
     order.transaction_id = transaction_id
 
-    if total == order.get_cart_total:
+    if total == float(order.get_cart_total):
             order.complete = True
     order.save()
 

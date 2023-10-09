@@ -41,7 +41,7 @@ function addCookieItem(productId,action){
 
   location.reload()
 }
-
+//as
 
 function updateUserOder(productId,action){
   console.log('User is logged in. sending data...')

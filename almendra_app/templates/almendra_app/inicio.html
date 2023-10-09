@@ -118,7 +118,7 @@
     <section>
         <div class="container-titulo_populares">
             <h2 class="titulo-populares">
-                Populares
+                Productos
             </h2>
             <a  class='ver-todos' href="#"> Ver todos</a>
         </div>
@@ -127,7 +127,7 @@
        
 <section class="section-product">
         <div class="container-product">
-            {% for product  in form_populares %}
+            {% for product  in products %}
             <div id="cardProduct"  class="card-product">
 
 
@@ -162,23 +162,23 @@
 {% block menufooter %}
 <section>
     <div class="container-ver_menu ver-cafes">
-          <a  class="title-ver_menu" href="{% url 'cafes' %}">Cafes</a>
+          <a  class="title-ver_menu" href="{% url 'inicio' %}">Cafes</a>
     </div>
 
     <div class="container-ver_menu ver-pasteleria">
-        <a  class="title-ver_menu" href="{% url 'pasteleria' %}">Pasteleria</a>
+        <a  class="title-ver_menu" href="{% url 'inicio' %}">Pasteleria</a>
     </div>
 
     <div class="container-ver_menu ver-salados">
-        <a  class="title-ver_menu" href="{% url 'salados' %}">Salados</a>
+        <a  class="title-ver_menu" href="{% url 'inicio' %}">Salados</a>
     </div>
 
     <div class="container-ver_menu ver-brunch">
-        <a  class="title-ver_menu" href="{% url 'brunch' %}">Brunch´s</a>
+        <a  class="title-ver_menu" href="{% url 'inicio' %}">Brunch´s</a>
     </div>
 
     <div class="container-ver_menu ver-bebidas">
-        <a  class="title-ver_menu" href="{% url 'bebidas' %}">Bebidas</a>
+        <a  class="title-ver_menu" href="{% url 'inicio' %}">Bebidas</a>
     </div>
 </section> 
 {% endblock %}  
@@ -257,7 +257,7 @@
         }
         return cookieValue
     }
-    var csrftokenn = getToken('csrftoken');
+    var csrftoken = getToken('csrftoken');
 
 
     function getCookie(name){
